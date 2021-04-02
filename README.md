@@ -2,10 +2,11 @@
 
 ## Project Live Link
 
-   #### *[https://book-life-bd.web.app/](https://book-life-bd.web.app/).
+   #### [https://book-life-bd.web.app/](https://book-life-bd.web.app/)
 
 ## Project Server Link:
-   #### *[https://book-life-server.herokuapp.com/](https://book-life-server.herokuapp.com/)
+
+   #### [https://book-life-server.herokuapp.com/](https://book-life-server.herokuapp.com/)
 
 ## Project Details:
     
