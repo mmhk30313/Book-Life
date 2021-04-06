@@ -28,13 +28,13 @@ const CheckOutProceed = () => {
             {
                 order && <div className="container py-4">
                     <div className="my-5 p-3 bg-light shadow card justify-content-center mx-auto w-75">
-                        <img src={congratulate} style={{width: '250px'}} className="mx-auto" alt=""/>
+                        <img src={congratulate} className="w-75 mx-auto" alt=""/>
                         <div className="d-flex">
                             <img src={congratulate3} className="w-25" alt=""/>
                             <h6  className="text-center text-info w-50 h-75 my-auto">Your order has been proceeded</h6>
                             <img src={congratulate3} className="w-25" alt=""/>
                         </div>
-                        <div className="d-flex justify-content-center">
+                        <div className="d-flex justify-content-center mt-2">
                             <button onClick={() => setModalShow(true)} className="btn btn-info">SEE YOUR ORDER</button>
                         </div>
                         <MyVerticallyCenteredModal
@@ -85,12 +85,12 @@ function MyVerticallyCenteredModal(props) {
                           <h6 className="text-success"><small>By: {userBook.authorName}</small></h6>
                           <div className="row">
                             <div className="col-md-4">
-                                <img className="img-fluid w-75" src={userBook.imgUrl} alt=""/>
+                                <img className="img-fluid w-75 mx-auto" src={userBook.imgUrl} alt=""/>
                             </div>
-                            <div className="col-md-4 align-items-center d-flex">
+                            <div className="col-md-4 align-items-center d-flex justify-content-center">
                                 <p><small>{userBook.quantity}</small></p>
                             </div>
-                            <div className="col-md-4 align-items-center d-flex">
+                            <div className="col-md-4 align-items-center d-flex justify-content-center">
                                 <p><small>${userBook.quantity * userBook.bookPrice}</small></p>
                             </div>
                           </div>
