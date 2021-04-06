@@ -45,7 +45,7 @@ const Login = () => {
         });
     }
     return (
-        <div className="jumbotron shadow bg-light mx-auto rounded d-flex justify-content-center p-5 login-field" style={{marginTop: '145px'}}>
+        <div data-aos="flip-up" className="jumbotron shadow bg-light mx-auto rounded d-flex justify-content-center p-5 login-field" style={{marginTop: '145px'}}>
             <button onClick={handleClick} className="btn btn-outline-warning w-100 mx-auto" style={{borderRadius: '30px'}} ><img src={google} alt="" style={{height: '25px'}} /> Continue With Google</button>
         </div>
     );

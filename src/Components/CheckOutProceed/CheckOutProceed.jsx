@@ -26,7 +26,9 @@ const CheckOutProceed = () => {
     return (
         <>
             {
-                order && <div className="container py-4">
+                order && <div data-aos="fade-up"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" className="container py-4">
                     <div className="my-5 p-3 bg-light shadow card justify-content-center mx-auto w-75">
                         <img src={congratulate} className="w-75 mx-auto" alt=""/>
                         <div className="d-flex">

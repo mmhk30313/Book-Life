@@ -2,26 +2,29 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { UserContext } from '../../App';
 import './ShowBook.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
-const ShowBook = ({book}) => {
+const ShowBook = ({idx, book}) => {
     // console.log(book);
     const [loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks] = useContext(UserContext);
     const history = useHistory();
-    const handleAddBook = (key) =>{
+    const handleAddBook = (keyId) =>{
         fetch('https://book-life-bd.herokuapp.com/all-users-books')
         .then(res => res.json())
         .then(data => {
             // console.log(data)
             setAllUsersBooks(data);
         })
-        history.push(`/order/${key}`);
-        if(!key){
+        history.push(`/order/${keyId}`);
+        if(!keyId){
             console.log(loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks);
         }
     }
     const { _id, bookName, authorName, bookPrice, imgUrl} = book;
     return (
-        <div className="book-card card col-md-3 m-2 justify-content-center">
+        <div data-aos={`${(idx + 1) % 3 === 1 ? "fade-up" : (idx + 1) % 3 === 2 ? "flip-up" : "fade-down"}`} data-aos-offset="100" data-aos-duration="800" data-aos-easing="ease-in-sine" className="book-card card col-md-3 m-2 w-100 justify-content-center">
             <div className="bg-special text-center rounded my-2 py-3">
                 <img src={imgUrl} className="book-img img-fluid rounded" alt=""/>
             </div>

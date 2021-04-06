@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <div className="container-fluid background-color">
             <br/>
-            <div className="search d-flex mx-auto py-5">
+            <div data-aos="flip-up"  data-aos-easing="ease-in-sine" data-aos-duration="1500" data-aos-offset="100" className="search d-flex mx-auto py-5">
                 <input className="form-control search-bar"  type="search" placeholder="Search Book" name="search" id=""/>
                 <button className="btn btn-primary" type="submit">Search</button>
             </div>
@@ -25,9 +25,9 @@ const Home = () => {
                  </div>
             }
             {
-                books.length > 0 && <div className="container-fluid row w-100 mx-auto justify-content-center">
+                books.length > 0 && <div className="container-fluid row w-100 mx-auto justify-content-center w-100">
                 {
-                    books.map((book, idx) => <ShowBook key={idx} book={book}/>)
+                    books.map((book, idx) => <ShowBook key={idx} idx={idx} book={book}/>)
                 }
             </div>
             }

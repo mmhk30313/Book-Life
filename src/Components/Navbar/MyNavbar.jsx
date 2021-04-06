@@ -22,7 +22,7 @@ const MyNavbar = () => {
     return (
         <div className="container">
             <Navbar className='' collapseOnSelect expand="lg" bg="white" variant="light">
-            <Navbar.Brand><Link to='/'><img src={logo} alt=""/></Link></Navbar.Brand>
+            <Navbar.Brand data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><Link to='/'><img src={logo} alt=""/></Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
