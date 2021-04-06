@@ -6,11 +6,18 @@ import logo from '../../images/icons/book_life_logo.png';
 import './MyNavbar.css';
 import { UserContext } from '../../App';
 const MyNavbar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks, userOrders, setUserOrders] = useContext(UserContext);
     const history = useHistory();
     const handleLogout = () =>{
         setLoggedInUser({});
+        // setBooks([]);
+        setUserBooks([]);
+        // setAllUsersBooks([]);
+        setUserOrders({});
         history.push('/');
+        if(false){
+            console.log(books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks, userOrders)
+        }
     }
     return (
         <div className="container">
@@ -22,7 +29,7 @@ const MyNavbar = () => {
                     <Link to="/home" className="mr-4 nav-link">Home</Link>
                     <Link to="/order/all-books" className="mr-4 nav-link">Orders</Link>
                     <Link to="/admin" className="mr-4 nav-link">Admin</Link>
-                    <Link to="/deals" className="mr-4 nav-link">Deals</Link>
+                    <Link to="/order-proceed" className="mr-4 nav-link">Deals</Link>
                     {
                         loggedInUser.email 
                         ? <>

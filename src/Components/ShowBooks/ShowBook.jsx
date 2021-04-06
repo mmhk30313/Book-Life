@@ -8,19 +8,22 @@ const ShowBook = ({book}) => {
     const [loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks] = useContext(UserContext);
     const history = useHistory();
     const handleAddBook = (key) =>{
-        fetch('https://book-life-server.herokuapp.com/all-users-books')
+        fetch('https://book-life-bd.herokuapp.com/all-users-books')
         .then(res => res.json())
         .then(data => {
             // console.log(data)
             setAllUsersBooks(data);
         })
         history.push(`/order/${key}`);
+        if(!key){
+            console.log(loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks);
+        }
     }
     const { _id, bookName, authorName, bookPrice, imgUrl} = book;
     return (
         <div className="book-card card col-md-3 m-2 justify-content-center">
-            <div className="bg-special text-center rounded my-2 py-2">
-                <img src={imgUrl} className="w-75 rounded" alt=""/>
+            <div className="bg-special text-center rounded my-2 py-3">
+                <img src={imgUrl} className="book-img img-fluid rounded" alt=""/>
             </div>
             <h6>{bookName}</h6>
             <p>{authorName}</p>

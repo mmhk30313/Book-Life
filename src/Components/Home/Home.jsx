@@ -12,7 +12,7 @@ const Home = () => {
         console.log(loggedInUser, setLoggedInUser);
     }
     return (
-        <div className="container-fluid">
+        <div className="container-fluid background-color">
             <br/>
             <div className="search d-flex mx-auto py-5">
                 <input className="form-control search-bar"  type="search" placeholder="Search Book" name="search" id=""/>

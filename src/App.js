@@ -13,23 +13,31 @@ import Login from "./Components/Login/Login";
 import Orders from "./Components/Orders/Orders";
 import Admin from "./Components/Admin/Admin";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import NotFound from "./Components/NotFound/NotFound";
+import OrderProceed from "./Components/OrderProceed/OrderProceed";
+import CheckOutProceed from "./Components/CheckOutProceed/CheckOutProceed";
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [books, setBooks] = useState([]);
   const [userBooks, setUserBooks] = useState([]);
   const [allUsersBooks, setAllUsersBooks] = useState([]);
+  const [userOrders, setUserOrders] = useState({});
   useEffect(()=>{
-    fetch('https://book-life-server.herokuapp.com/allBooks')
+    fetch("https://book-life-bd.herokuapp.com/allBooks")
     .then(res => res.json())
     .then(data => setBooks(data))
     // const newBooks = fakeData;
     // setBooks(newBooks);
+
+    fetch('https://book-life-bd.herokuapp.com/all-users-books')
+    .then(res => res.json())
+    .then(data => setAllUsersBooks(data))
   }, []);
   // console.log(books);
   return (
     <div className="m-0 p-0">
-      <UserContext.Provider value={[loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks]}>
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks, userOrders, setUserOrders]}>
         <Router>
           <Switch>
             <Route exact path="/">
@@ -50,6 +58,17 @@ function App() {
               <Orders/>
             </PrivateRoute>
             <Route path='/admin' component={Admin}/>
+            <Route path='/order-proceed'>
+              <MyNavbar/>
+              <OrderProceed/>
+            </Route>
+            <Route path="/user-orders">
+              <MyNavbar/>
+              <CheckOutProceed orders={userOrders} />
+            </Route>
+            <Route path='*/:page'>
+              <NotFound/>
+            </Route>
           </Switch>
         </Router>
       </UserContext.Provider>

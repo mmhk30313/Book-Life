@@ -8,20 +8,20 @@ const ManageBooks = () => {
     const [loggedInUser, setLoggedInUser, books, setBooks] = useContext(UserContext);
     // const [allBooks, setAllBooks] = useState([]);
     // console.log(allBooks);
-    useEffect(() =>{
-        fetch('https://book-life-server.herokuapp.com/allBooks')
-        .then(res => res.json())
-        .then(data => {
-            setBooks(data);
-        })
-    },[])
+    // useEffect(() =>{
+    //     fetch('https://book-life-bd.herokuapp.com/allBooks')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setBooks(data);
+    //     })
+    // },[])
     const handleDeleteBook = (id) =>{
-        fetch(`https://book-life-server.herokuapp.com/delete/${id}`)
+        fetch(`https://book-life-bd.herokuapp.com/delete/${id}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data)
             if(data.deletedCount){
-                fetch('https://book-life-server.herokuapp.com/allBooks')
+                fetch('https://book-life-bd.herokuapp.com/allBooks')
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);
@@ -33,6 +33,7 @@ const ManageBooks = () => {
     return (
         <>
            <h4 className="mt-5 ml-2">Manage Books</h4>
+           
             <div className="input-form p-3">
                 <div className="scrolling py-3 px-4 w-100 mx-auto my-3 card shadow bg-white table-responsive">
                     <div className="table">
@@ -61,7 +62,7 @@ const ManageBooks = () => {
                             </tbody>
                         </table>
                         {
-                            !books && <div className="text-center d-flex justify-content-center">
+                            books.length === 0 && <div className="text-center d-flex justify-content-center">
                             <CircularProgress color="primary" />
                         </div>
                         }

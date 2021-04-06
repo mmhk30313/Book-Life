@@ -6,7 +6,7 @@
 
 ## Project Server Link:
 
-   #### [https://book-life-server.herokuapp.com/](https://book-life-server.herokuapp.com/)
+   #### [https://book-life-bd.herokuapp.com/](https://book-life-bd.herokuapp.com/)
 
 ## Project Details:
     
