@@ -12,7 +12,7 @@ const Admin = () => {
     const [manage_books, setManageBook] = useState("");
     const [edit_book, setEditBook] = useState("");
     const handleAdminWork = (work) =>{
-        console.log(work);
+        // console.log(work);
         if(work==="add-book"){
             setAddBook('active');
             setManageBook("");

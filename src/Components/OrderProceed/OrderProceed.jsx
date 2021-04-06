@@ -51,7 +51,7 @@ const OrderProceed = () => {
             userBooks: userBooks,
             userEmail: loggedInUser.email
         }
-        console.log(orders);
+        // console.log(orders);
         fetch(`https://book-life-bd.herokuapp.com/update-user/orders?email=${loggedInUser.email}`, {
             method: "POST",
             body: JSON.stringify(orders),

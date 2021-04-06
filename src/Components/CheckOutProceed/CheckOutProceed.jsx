@@ -7,22 +7,22 @@ import { UserContext } from '../../App';
 const CheckOutProceed = () => {
     const [loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks, userOrders, setUserOrders] = useContext(UserContext);
 
-    console.log(userOrders)
+    // console.log(userOrders)
     const [modalShow, setModalShow] = useState(false);
 
     useEffect(() =>{
         fetch(`https://book-life-bd.herokuapp.com/user-order?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             setUserOrders(data);
         })
         .catch(err => console.log(err, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks, userOrders))
     }, [])
     // Pore orders nia kaj korte hobe...
-    console.log(userOrders)
+    // console.log(userOrders)
     const {order} = userOrders;
-    console.log(order)
+    // console.log(order)
     return (
         <>
             {

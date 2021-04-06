@@ -6,15 +6,7 @@ import { CircularProgress } from '@material-ui/core';
 
 const ManageBooks = () => {
     const [loggedInUser, setLoggedInUser, books, setBooks] = useContext(UserContext);
-    // const [allBooks, setAllBooks] = useState([]);
-    // console.log(allBooks);
-    // useEffect(() =>{
-    //     fetch('https://book-life-bd.herokuapp.com/allBooks')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         setBooks(data);
-    //     })
-    // },[])
+    
     const handleDeleteBook = (id) =>{
         fetch(`https://book-life-bd.herokuapp.com/delete/${id}`)
         .then(res => res.json())
