@@ -4,8 +4,11 @@ import { UserContext } from '../../App';
 
 const PrivateRoute = ({children, ...rest}) => {
     const [loggedInUser] = useContext(UserContext);
-    // console.log(loggedInUser.email);
-    // console.log(rest,children);
+    // console.log(loggedInUser.userType);
+    // console.log(rest);
+    // const user = loggedInUser.userType;
+    const adminLocation = rest.computedMatch.params.key;
+    // console.log(adminLocation);
     
     return (
         <Route
@@ -16,8 +19,8 @@ const PrivateRoute = ({children, ...rest}) => {
                 : (
                 <Redirect
                     to={{
-                    pathname: "/login",
-                    state: { from: location }
+                        pathname: `/login${ adminLocation=== "admin" ? "?user=admin" : ""}`,
+                        state: { from: location }
                     }}
                 />
                 )

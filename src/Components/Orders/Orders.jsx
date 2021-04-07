@@ -161,8 +161,8 @@ const Orders = () => {
                             {
                                 userBooks && userBooks.map(userBook => <tr key={userBook._id}>
                                     <td colSpan="3">{userBook.bookName}</td>
-                                    <td className='text-center'><span onClick={() => handleIncreaseDecrease("-", userBook._id, userBook.bookPrice)} className="btn btn-outline-danger font-weight-bold plus-min">&minus;</span> <span id={userBook._id}>{userBook.quantity}</span> <span onClick={() => handleIncreaseDecrease("+", userBook._id, userBook.bookPrice)} className='btn btn-outline-success font-weight-bold plus-min'> &#x2b;</span></td>
-                                    <td className='text-center'><h3 onClick={() =>handleDeleteBook(userBook._id)}className='btn btn-outline-dark bg-cancel font-weight-bold'>&times;</h3></td>
+                                    <td className='text-center'><span onClick={() => handleIncreaseDecrease("-", userBook._id, userBook.bookPrice)} className="btn btn-outline-danger p-1 font-weight-bold plus-minus rounded-circle">&minus;</span> <span  id={userBook._id}>{userBook.quantity}</span> <span onClick={() => handleIncreaseDecrease("+", userBook._id, userBook.bookPrice)} className='btn btn-outline-success p-1 font-weight-bold plus-minus rounded-circle'> &#x2b;</span></td>
+                                    <td className='text-center'><h3 onClick={() =>handleDeleteBook(userBook._id)} className='btn btn-outline-dark p-1 bg-cancel font-weight-bold rounded-circle'>&times;</h3></td>
                                     <td className='text-center'>$ <span id={userBook._id+"-price"}>{userBook.bookPrice*userBook.quantity}</span></td>
                                 </tr>)
                             }

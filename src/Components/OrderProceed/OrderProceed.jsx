@@ -78,7 +78,7 @@ const OrderProceed = () => {
     }
     return (
         <div className="w-100 mx-auto my-4">
-            <div style={{marginTop: '10vh'}} data-aos="flip-up" data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-offset="100" className="p-3 shadow bg-light card order-proceed-from mx-auto justify-content-center align-items-center">
+            <div style={{marginTop: '10vh'}} data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-offset="100" className="p-3 shadow bg-light card order-proceed-from mx-auto justify-content-center align-items-center">
                 {
                     userBooks.length !== 0 
                     ? <>
@@ -122,10 +122,9 @@ const OrderProceed = () => {
                             <button type="submit" form="checkOutForm" className="btn btn-success">CHECKOUT PROCEED</button>
                         </div>
                     </>
-                    : <div data-aos="flip-left"
-                    data-aos-easing="ease-out-cubic"
+                    : <div data-aos="flip-left" data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000"  className="p-1 text-center">
-                        <img src="https://media1.giphy.com/media/myqW4XYBkh0UOIIcCb/source.gif" className="img-fluid w-50 mx-auto"  alt=""/>
+                        <img data-aos="fade-down" data-aos-duration="3000" src="https://media1.giphy.com/media/myqW4XYBkh0UOIIcCb/source.gif" className="img-fluid w-50 mx-auto"  alt=""/>
                         <h6 className="text-center text-danger">Sorry!!! Your order is not available</h6>
                         <p className="text-center font-weight-bold text-info">Please go to the home page to order first</p>
                     </div>

@@ -28,8 +28,10 @@ const MyNavbar = () => {
                 <Nav className="ml-auto">
                     <Link to="/home" className="mr-4 nav-link">Home</Link>
                     <Link to="/order/all-books" className="mr-4 nav-link">Orders</Link>
-                    <Link to="/admin" className="mr-4 nav-link">Admin</Link>
                     <Link to="/order-proceed" className="mr-4 nav-link">Deals</Link>
+                    {
+                        loggedInUser.userType !== "customer" && <Link to="/admin/admin" className="mr-4 nav-link">Admin</Link>
+                    }
                     {
                         loggedInUser.email 
                         ? <>

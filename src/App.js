@@ -53,12 +53,18 @@ function App() {
               <MyNavbar/>
               <Login/>
             </Route>
+            <Route path="/login?user=admin">
+              <MyNavbar/>
+              <Login/>
+            </Route>
             {/* Private Route */}
             <PrivateRoute path="/order/:key">
               <MyNavbar/>
               <Orders/>
             </PrivateRoute>
-            <Route path='/admin' component={Admin}/>
+            <PrivateRoute path='/admin/:key'>
+              <Admin/>
+            </PrivateRoute>
             <Route path='/order-proceed'>
               <MyNavbar/>
               <OrderProceed/>

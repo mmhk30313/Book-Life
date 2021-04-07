@@ -44,7 +44,7 @@ const ManageBooks = () => {
                                         <td colSpan="3">{book.bookName}</td>
                                         <td className='text-center' colSpan="2">{book.authorName}</td>
                                         <td className='text-center'>${book.bookPrice}</td>
-                                        <td className='text-center'>
+                                        <td className='text-center d-flex'>
                                             <span style={{cursor: 'pointer'}}><img style={{height: '30px'}} className="mr-1" src={editIcon} alt=""/></span>
                                             <span onClick={() => handleDeleteBook(book._id)} style={{cursor: 'pointer'}}><img style={{height: '30px'}} src={deleteIcon} alt=""/></span>
                                         </td>
