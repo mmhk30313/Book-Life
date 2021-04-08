@@ -40,7 +40,7 @@ const AddBook = () => {
             }
             console.log(bookDetails);
             setAddedBook(bookDetails);
-            fetch('https://book-life-bd.herokuapp.com/addBook', {
+            fetch('http://localhost:5000/addBook', {
                 method: "POST",
                 body: JSON.stringify(bookDetails),
                 headers: {
@@ -59,7 +59,7 @@ const AddBook = () => {
         // .....MODAL Bootstrap......
                 setModalShow(true)
 
-                fetch('https://book-life-bd.herokuapp.com/allBooks')
+                fetch('http://localhost:5000/allBooks')
                 .then(res => res.json())
                 .then(data => setBooks(data))
             })

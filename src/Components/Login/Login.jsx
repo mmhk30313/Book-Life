@@ -69,13 +69,16 @@ const Login = () => {
                 photoURL,
                 userType: userType
             }
-            setLoggedInUser(myUser);            fetch(`https://book-life-bd.herokuapp.com/user-books?email=${email}`)
+            setLoggedInUser(myUser);            fetch(`http://localhost:5000/user-books?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 setUserBooks(data);
             })
-            if(user === "admin"){
+            if(search === 'admin' && user === 'customer'){
+                history.push('/');
+            }
+            else if(user === "admin"){
                 history.push('/admin/admin');
             }
             else{

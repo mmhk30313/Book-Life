@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,18 +23,7 @@ function App() {
   const [userBooks, setUserBooks] = useState([]);
   const [allUsersBooks, setAllUsersBooks] = useState([]);
   const [userOrders, setUserOrders] = useState({});
-  useEffect(()=>{
-    fetch("https://book-life-bd.herokuapp.com/allBooks")
-    .then(res => res.json())
-    .then(data => setBooks(data))
-    // const newBooks = fakeData;
-    // setBooks(newBooks);
-
-    fetch('https://book-life-bd.herokuapp.com/all-users-books')
-    .then(res => res.json())
-    .then(data => setAllUsersBooks(data))
-
-  }, []);
+  
   // console.log(books);
   return (
     <div className="m-0 p-0">

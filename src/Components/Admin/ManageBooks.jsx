@@ -8,12 +8,12 @@ const ManageBooks = () => {
     const [loggedInUser, setLoggedInUser, books, setBooks] = useContext(UserContext);
     
     const handleDeleteBook = (id) =>{
-        fetch(`https://book-life-bd.herokuapp.com/delete/${id}`)
+        fetch(`http://localhost:5000/delete/${id}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data)
             if(data.deletedCount){
-                fetch('https://book-life-bd.herokuapp.com/allBooks')
+                fetch('http://localhost:5000/allBooks')
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);

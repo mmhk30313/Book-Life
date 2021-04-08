@@ -11,7 +11,7 @@ const ShowBook = ({idx, book}) => {
     const [loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks] = useContext(UserContext);
     const history = useHistory();
     const handleAddBook = (keyId) =>{
-        fetch('https://book-life-bd.herokuapp.com/all-users-books')
+        fetch('http://localhost:5000/all-users-books')
         .then(res => res.json())
         .then(data => {
             // console.log(data)
@@ -24,7 +24,7 @@ const ShowBook = ({idx, book}) => {
     }
     const { _id, bookName, authorName, bookPrice, imgUrl} = book;
     return (
-        <div data-aos={`${(idx + 1) % 3 === 1 ? "fade-up" : (idx + 1) % 3 === 2 ? "flip-up" : "fade-down"}`} data-aos-offset="100" data-aos-duration="800" data-aos-easing="ease-in-sine" className="book-card card col-md-3 m-2 w-100 justify-content-center">
+        <div data-aos={`${(idx + 1) % 3 === 1 ? "fade-up" : (idx + 1) % 3 === 2 ? "flip-up" : "fade-down"}`} data-aos-offset="100" data-aos-duration="1000" data-aos-easing="ease-in-sine" className="book-card card col-lg-3 col-md-5 col-sm-5 m-2 w-100 justify-content-center">
             <div className="bg-special text-center rounded my-2 py-3">
                 <img src={imgUrl} className="book-img img-fluid rounded" alt=""/>
             </div>
