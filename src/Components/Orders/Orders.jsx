@@ -10,14 +10,14 @@ const Orders = () => {
     const {email} = loggedInUser;
     // console.log(allUsersBooks);
     function setUserData(){
-        fetch(`http://localhost:5000/user-books?email=${email}`)
+        fetch(`https://book-life-bd.herokuapp.com/user-books?email=${email}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);
             setUserBooks(data);
         })
 
-        fetch('http://localhost:5000/all-users-books')
+        fetch('https://book-life-bd.herokuapp.com/all-users-books')
         .then(res => res.json())
         .then(data => setAllUsersBooks(data))
     }
@@ -44,7 +44,7 @@ const Orders = () => {
             let _id;
             if(!userBookForId){
                 // console.log(('insertion'));
-                fetch(`http://localhost:5000/user/add-book`, {
+                fetch(`https://book-life-bd.herokuapp.com/user/add-book`, {
                     method: "POST",
                     body: JSON.stringify(newUserBook),
                     headers: {
@@ -64,7 +64,7 @@ const Orders = () => {
             else{
                 // console.log("update");
                 _id = userBookForId._id;
-                fetch(`http://localhost:5000/user-book/update-from-book-card/${_id}?email=${email}`, {
+                fetch(`https://book-life-bd.herokuapp.com/user-book/update-from-book-card/${_id}?email=${email}`, {
                     method: "POST",
                     body: JSON.stringify(newUserBook),
                     headers: {
@@ -110,7 +110,7 @@ const Orders = () => {
         // console.log(parseInt(total.innerText))
             
         total.innerText = totalValue;
-        fetch(`http://localhost:5000/user-book/update-from-table/${id}`, {
+        fetch(`https://book-life-bd.herokuapp.com/user-book/update-from-table/${id}`, {
             method: "POST",
             body: JSON.stringify({quantity: value, bookPrice: price}),
             headers: {
@@ -130,7 +130,7 @@ const Orders = () => {
     }
 
     const handleDeleteBook = (id) => {
-        fetch(`http://localhost:5000/delete/user-book/${id}`)
+        fetch(`https://book-life-bd.herokuapp.com/delete/user-book/${id}`)
         .then(res => res.json())
         .then(data => {
             if(data){

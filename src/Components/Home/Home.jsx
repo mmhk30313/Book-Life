@@ -13,13 +13,13 @@ const Home = () => {
     }
     useEffect(()=>{
         // console.log(search)
-        fetch(`http://localhost:5000/allBooks?search=${search}`)
+        fetch(`https://book-life-bd.herokuapp.com/allBooks?search=${search}`)
         .then(res => res.json())
         .then(data => setBooks(data))
         // const newBooks = fakeData;
         // setBooks(newBooks);
     
-        fetch('http://localhost:5000/all-users-books')
+        fetch('https://book-life-bd.herokuapp.com/all-users-books')
         .then(res => res.json())
         .then(data => setAllUsersBooks(data))
     

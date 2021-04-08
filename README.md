@@ -6,7 +6,7 @@
 
 ## Project Server Link:
 
-   #### [http://localhost:5000/](http://localhost:5000/)
+   #### [https://book-life-bd.herokuapp.com/](https://book-life-bd.herokuapp.com/)
 
 ## Project Details:
     

@@ -11,7 +11,7 @@ const ShowBook = ({idx, book}) => {
     const [loggedInUser, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, setAllUsersBooks] = useContext(UserContext);
     const history = useHistory();
     const handleAddBook = (keyId) =>{
-        fetch('http://localhost:5000/all-users-books')
+        fetch('https://book-life-bd.herokuapp.com/all-users-books')
         .then(res => res.json())
         .then(data => {
             // console.log(data)

@@ -13,7 +13,7 @@ const OrderProceed = () => {
     // console.log(userBooks);
 
     function setUserData(){
-        fetch(`http://localhost:5000/delete/user-books/email?email=${loggedInUser.email}`)
+        fetch(`https://book-life-bd.herokuapp.com/delete/user-books/email?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);
@@ -22,7 +22,7 @@ const OrderProceed = () => {
             }
         })
 
-        fetch('http://localhost:5000/all-users-books')
+        fetch('https://book-life-bd.herokuapp.com/all-users-books')
         .then(res => res.json())
         .then(data => setAllUsersBooks(data))
     }
@@ -52,7 +52,7 @@ const OrderProceed = () => {
             userEmail: loggedInUser.email
         }
         // console.log(orders);
-        fetch(`http://localhost:5000/update-user/orders?email=${loggedInUser.email}`, {
+        fetch(`https://book-life-bd.herokuapp.com/update-user/orders?email=${loggedInUser.email}`, {
             method: "POST",
             body: JSON.stringify(orders),
              headers: {

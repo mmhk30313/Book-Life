@@ -11,7 +11,7 @@ const CheckOutProceed = () => {
     const [modalShow, setModalShow] = useState(false);
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/user-order?email=${loggedInUser.email}`)
+        fetch(`https://book-life-bd.herokuapp.com/user-order?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);
