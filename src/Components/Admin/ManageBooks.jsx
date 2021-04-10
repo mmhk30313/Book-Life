@@ -23,7 +23,7 @@ const ManageBooks = () => {
         .catch(err => console.log(err, loggedInUser, setLoggedInUser))
     }
     return (
-        <>
+        <div className="mb-5">
            <h4 className="mt-5 ml-2">Manage Books</h4>
            
             <div className="input-form p-3">
@@ -61,7 +61,7 @@ const ManageBooks = () => {
                     </div>
                 </div>
             </div> 
-        </>
+        </div>
     );
 };
 

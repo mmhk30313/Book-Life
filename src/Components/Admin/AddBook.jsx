@@ -68,7 +68,7 @@ const AddBook = () => {
         .catch(err => console.log(err))
     }
     return (
-        <>
+        <div className="mb-5">
             <h4 className="mt-5 ml-2">Add Book</h4>
                 <div className="input-form p-3">
                     <form onSubmit={handleSubmit} className="card shadow py-3 px-4" id="useForm">
@@ -102,7 +102,7 @@ const AddBook = () => {
                     />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

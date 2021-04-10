@@ -77,8 +77,8 @@ const OrderProceed = () => {
         .catch(err => console.log(err, setLoggedInUser, books, setBooks, userBooks, setUserBooks, allUsersBooks, userOrders))
     }
     return (
-        <div className="w-100 mx-auto my-4">
-            <div style={{marginTop: '10vh'}} data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-offset="100" className="p-3 shadow bg-light card order-proceed-from mx-auto justify-content-center align-items-center">
+        <div className="w-100 mx-auto my-3 mb-5">
+            <div style={{marginTop: ''}} data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-offset="100" className="p-4 shadow bg-light card order-proceed-from mx-auto justify-content-center align-items-center">
                 {
                     userBooks.length !== 0 
                     ? <>

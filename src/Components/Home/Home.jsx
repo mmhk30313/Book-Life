@@ -30,7 +30,7 @@ const Home = () => {
         setSearch(evt.target.search.value);
     }
     return (
-        <div className="container-fluid background-color">
+        <div className="container-fluid background-color mb-5">
             <br/>
             <form onSubmit={handleSearch} data-aos="flip-up"  data-aos-easing="ease-in-sine" data-aos-duration="1500" data-aos-offset="100" className="search d-flex mx-auto py-5">
                 <input className="form-control search-bar"  type="search" placeholder="Search Book" name="search" id=""/>

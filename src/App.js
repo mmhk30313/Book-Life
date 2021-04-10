@@ -16,6 +16,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import NotFound from "./Components/NotFound/NotFound";
 import OrderProceed from "./Components/OrderProceed/OrderProceed";
 import CheckOutProceed from "./Components/CheckOutProceed/CheckOutProceed";
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -68,6 +69,17 @@ function App() {
           </Switch>
         </Router>
       </UserContext.Provider>
+      <ScrollUpButton
+        StopPosition={0}
+        ShowAtPosition={150}
+        EasingType='easeInSine'
+        AnimationDuration={1000}
+        ContainerClassName='ScrollUpButton__Container'
+        TransitionClassName='ScrollUpButton__Toggled'
+        className="text-success bg-info btn btn-success"
+        style={{}}
+        ToggledStyle={{}}
+      />
     </div>
   );
 }
